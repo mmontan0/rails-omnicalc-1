@@ -34,6 +34,18 @@ class ZebraController < ApplicationController
     @denominator=(1-(1+@r_)**-@periods)
     @result_payment=@numerator/@denominator
     render({:template => "calculators/payment_results"})
+  end
+
+  def random_new
+    render({:template => "calculators/random_calc"})
+  end
+
+  def random_results
+    @min=params.fetch("lower_bound").to_f
+    @max=params.fetch("upper_bound").to_f
+    @result_rand=rand(@min..@max)
+
+    render({:template =>"calculators/random_results"})
 
   end
 end
