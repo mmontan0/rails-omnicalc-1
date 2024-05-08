@@ -1,0 +1,35 @@
+<h1> Payment Results </h1>
+
+<dl>
+  <dt>
+  Annual Percentage Rate (APR)
+  </dt>
+  <dd>
+  <%=@apr_.to_fs(:percentage, {:precision => 4})%>
+  </dd>
+
+  <dt>
+  Remaining Years
+  </dt>
+  <dd>
+  <%=@years_%>
+  </dd>
+
+   <dt>
+  Present Value
+  </dt>
+  <dd>
+  <%=@present_value.to_fs(:currency)%>
+  </dd>
+
+  <dt>
+  Payment
+  </dt>
+  <dd>
+  <%= @result_payment.to_fs(:currency)%>
+  </dd>
+</dl>
+
+<a href="/payment/new">
+Calculate another payment
+</a>
